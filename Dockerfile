@@ -56,14 +56,14 @@ ENV APPS_HOME /apps
 RUN mkdir $APPS_HOME
 
 # install po4a
+# for 'latest', use most recent commit hash as version
 RUN APPNAME=po4a && \
-    VERSION=0.67 && \
+    VERSION=4cc0afd96fbb4f2d6674f8259a7a9f7e900942d8 && \
     mkdir $APPS_HOME/$APPNAME && \
     cd $APPS_HOME/$APPNAME && \
-    wget https://github.com/mquinson/$APPNAME/releases/download/v$VERSION/$APPNAME-$VERSION.tar.gz && \
-    tar -xzf $APPNAME-$VERSION.tar.gz && \
-    rm $APPNAME-$VERSION.tar.gz && \
-    cd $APPNAME-$VERSION && \
+    git clone https://github.com/mquinson/$APPNAME && \
+    cd $APPNAME && \
+    git checkout $VERSION && \
     perl Build.PL && \
     ./Build && \
     ./Build install
