@@ -58,7 +58,7 @@ RUN mkdir $APPS_HOME
 # install po4a
 # for 'latest', use most recent commit hash as version
 RUN APPNAME=po4a && \
-    VERSION=4cc0afd96fbb4f2d6674f8259a7a9f7e900942d8 && \
+    VERSION=6086578b2e8e58afa8e975d4e4aab45a06551406 && \
     mkdir $APPS_HOME/$APPNAME && \
     cd $APPS_HOME/$APPNAME && \
     git clone https://github.com/mquinson/$APPNAME && \
