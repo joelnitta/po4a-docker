@@ -64,7 +64,7 @@ RUN locale-gen en_US.UTF-8
 # install po4a
 # for 'latest', use most recent commit hash as version
 RUN APPNAME=po4a && \
-    VERSION=6086578b2e8e58afa8e975d4e4aab45a06551406 && \
+    VERSION=23c7c20a000fb2a10c254b57ac334dfb2664dd19 && \
     mkdir $APPS_HOME/$APPNAME && \
     cd $APPS_HOME/$APPNAME && \
     git clone https://github.com/mquinson/$APPNAME && \
