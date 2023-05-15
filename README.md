@@ -10,6 +10,8 @@ The `latest` tag is the most recent development version (at the time of building
 
 There is one branch per tag (e.g., [0.67](https://github.com/joelnitta/po4a-docker/tree/0.67)). `main` tracks `latest`.
 
+The tag for the arm64 build (`joelnitta/po4a-arm64:latest`) should be built by including the flag `--platform linux/arm64` in the `docker build` call, i.e., `docker build --platform linux/arm64 . -t joelnitta/po4a-arm64:latest`.
+
 ## License
 
 [MIT](LICENSE)
