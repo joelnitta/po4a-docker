@@ -27,7 +27,8 @@ RUN apt-get update && \
     git \
     ca-certificates \
     make \
-    build-essential
+    build-essential \
+    locales
 
 # install SGMLSpm
 # cpanm http://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz does not work
@@ -54,6 +55,11 @@ RUN cpanm Locale::gettext \
 # Create /apps for installing software
 ENV APPS_HOME /apps
 RUN mkdir $APPS_HOME
+
+# Fix missing locale error in perl
+RUN export LC_ALL=en_US.UTF-8
+RUN export LANG=en_US.UTF-8
+RUN locale-gen en_US.UTF-8
 
 # install po4a
 # for 'latest', use most recent commit hash as version
